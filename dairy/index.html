@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="web pic.webp">
+
+
+<title>Personal Diary</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<body>
+   
+<div class="floating-hearts">
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+<span>❤</span>
+</div>
+
+<div class="container">
+
+    <!-- LOGIN PAGE -->
+    <div id="authBox" class="card glass">
+
+        <div class="logo">
+            📔
+        </div>
+
+        <h1 class="main-title">
+            My Diary
+        </h1>
+
+        <p class="subtitle">
+            Write it. Save it. Cherish it forever.
+        </p>
+
+        <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="email" placeholder="Enter Email"
+            autocomplete="off">
+        </div>
+
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" placeholder="Enter Password"
+            autocomplete="new-password">
+        </div>
+
+        <div class="btn-row">
+
+            <button class="register-btn" onclick="register()">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </button>
+
+            <button class="login-btn" onclick="login()">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </button>
+            
+
+
+        </div>
+        
+
+    </div>
+
+    <!-- DIARY PAGE -->
+    <div id="diaryBox" class="card diary-card hidden">
+
+        <h1 class="diary-title">
+            🌸 Personal Diary 🌸
+        </h1>
+        <button id="darkBtn">
+🌙 Dark Mode
+</button>
+        <div class="search-box">
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="🔍 Search saved notes..."
+    onkeyup="searchNotes()">
+        </div>
+
+        <!-- DATE SECTION -->
+
+        <div class="date-selectors">
+
+            <select id="daySelect">
+                <option>1</option>
+            </select>
+
+            <select id="monthSelect">
+                <option>January</option>
+            </select>
+
+            <select id="yearSelect">
+                <option>2026</option>
+            </select>
+
+        </div>
+
+        <div class="date-bar">
+
+            <button class="nav-btn" id="prevBtn">
+                ◀ Previous
+            </button>
+
+            <div class="current-date" id="currentDate">
+                📅 Date
+            </div>
+
+            <button class="nav-btn" id="nextBtn">
+                Next ▶
+            </button>
+
+        </div>
+
+        <!-- DIARY WRITING AREA -->
+
+        <div class="paper">
+
+            <textarea
+            id="noteText"
+            placeholder="Write your thoughts..."></textarea>
+
+        </div>
+
+        <!-- BUTTONS -->
+
+        <div class="btn-row">
+
+            <button class="save-btn" onclick="saveNote()">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save Note
+            </button>
+
+            <button class="logout-btn" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+        <!-- SAVED NOTES -->
+
+        <div id="notes"></div>
+
+    </div>
+
+</div>
+
+<script type="module" src="app.js"></script>
+<div id="messageBox"></div>
+
+</body>
+</html>
